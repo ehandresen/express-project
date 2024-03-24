@@ -1,13 +1,13 @@
-// import express from 'express';
-import { createServer } from 'node:http';
+import express from 'express';
 
-// const app = express();
+const app = express();
 
-const server = createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/plain' });
-  response.sendDate('Hello World!');
+const PORT = process.env.PORT || 5000;
+
+app.get('/', (request, response) => {
+  response.send({ msg: 'Hello' });
 });
 
-server.listen(3000, '127.0.0.1', () => {
-  console.log('Listening on 127.0.0.1:3000');
+app.listen(PORT, () => {
+  console.log(`Running on port: ${PORT}`);
 });
