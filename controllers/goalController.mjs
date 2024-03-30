@@ -7,7 +7,10 @@ function getGoals(request, response) {
 // @desc Set goals
 // @route POST /api/goals
 function setGoal(request, response) {
-  response.status(200).json({ message: 'Set goal' });
+  if (!request.body.text) {
+    response.status(400);
+    throw new Error('Please add a text field');
+  }
 }
 
 // @desc Update goal
