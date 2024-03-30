@@ -6,7 +6,7 @@ function errorHandler(error, request, response, next) {
 
   response.json({
     message: error.message,
-    stack: process.env.NODE_ENV === 'production' ? null : error.stack,
+    stack: process.env.NODE_ENV === 'production' ? null : error.stack, // only need in development mode
   });
 }
 
