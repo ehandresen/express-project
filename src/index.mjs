@@ -1,5 +1,5 @@
 import express from 'express';
-import { router } from '../routes/goalRoutes.mjs';
+import router from '../routes/goalRoutes.mjs';
 
 const app = express();
 
