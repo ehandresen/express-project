@@ -1,4 +1,5 @@
 import express from 'express';
+import dotenv
 import router from '../routes/goalRoutes.mjs';
 import errorHandler from '../middleware/errorMiddleware.mjs';
 
