@@ -53,7 +53,7 @@ const deleteGoal = asyncHandler(async (request, response) => {
     throw new Error('Could not delete goal');
   }
 
-  await Goal.deleteOne();
+  await goal.deleteOne();
 
   response.status(200).json({ id: request.params.id });
 });
