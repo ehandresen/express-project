@@ -1,7 +1,8 @@
 import express from 'express';
 import colors from 'colors';
 import 'dotenv/config';
-import router from '../routes/goalRoutes.mjs';
+import goalRoutes from '../routes/goalRoutes.mjs';
+import userRoutes from '../routes/userRoutes.mjs';
 import errorHandler from '../middleware/errorMiddleware.mjs';
 import connectDB from '../config/db.mjs';
 
@@ -12,7 +13,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/goals', router);
+app.use('/api/goals', goalRoutes);
+app.use('/api/users', userRoutes);
 
 app.use(errorHandler);
 
